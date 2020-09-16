@@ -24,6 +24,12 @@ class ViewController: UIViewController {
     
     
     @objc func printVal(notification: NSNotification) {
+        if let data = notification.userInfo as NSDictionary? {
+            let len = data.count
+            for i in 0..<len {
+                print(data[i]!)
+            }
+        }
         if notification.name == one {
             print("One pressed")
         }
